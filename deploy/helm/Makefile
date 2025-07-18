@@ -1,7 +1,7 @@
 # Makefile for RAG Deployment
 # Replaces the original deploy.sh script with additional uninstall functionality
 ifeq ($(NAMESPACE),)
-ifeq (,$(filter depend install-ingestion-pipeline list-models% help,$(MAKECMDGOALS)))
+ifeq (,$(filter depend install-ingestion-pipeline list-% help,$(MAKECMDGOALS)))
 $(error NAMESPACE is not set)
 endif
 endif
@@ -79,6 +79,7 @@ helm_ingestion_args = \
 help:
 	@echo "Available targets:"
 	@echo "  list-models   - List available models"
+	@echo "  list-mcps     - List available MCP servers"
 	@echo "  install       - Install the RAG deployment (creates namespace, secrets, and deploys Helm chart)"
 	@echo "  install-ingestion-pipeline - Install extra ingestion pipelines (must be on the same namespace as the RAG deployment)"
 	@echo "  uninstall     - Uninstall the RAG deployment and clean up resources"
@@ -110,6 +111,10 @@ depend:
 .PHONY: list-models
 list-models: depend
 	@helm template dummy-release $(RAG_CHART) --set llm-service._debugListModels=true | grep ^model:
+
+.PHONY: list-mcps
+list-mcps: depend
+	@helm template dummy-release $(RAG_CHART) --set mcp-servers._debugListMcps=true | grep ^MCP
 
 .PHONY: install
 install: namespace depend delete-jobs

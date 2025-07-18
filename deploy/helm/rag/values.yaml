@@ -3,7 +3,7 @@ replicaCount: 1
 image:
   repository: quay.io/ecosystem-appeng/llamastack-dist-ui
   pullPolicy: IfNotPresent
-  tag: 0.2.9
+  # tag: 0.2.9
 
 service:
   type: ClusterIP
@@ -106,7 +106,7 @@ volumeMounts:
 
 global:
   models: {}
-
+  mcp-servers: {}
 
 pgvector:
   secret:
@@ -136,9 +136,6 @@ minio:
 llama-stack:
   secrets:
     TAVILY_SEARCH_API_KEY: "Paste-your-key-here"
-  mcp-servers: {}
-    #  mcp-weather:
-    #   uri: http://rag-mcp-weather:8000/sse
 
 
 ingestion-pipeline:

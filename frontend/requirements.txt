@@ -1,5 +1,5 @@
 streamlit
 pandas
-llama-stack-client==0.2.9
 streamlit-option-menu
-llama-stack==0.2.9
+llama-stack-client==__LLAMASTACK_VERSION__
+llama-stack==__LLAMASTACK_VERSION__

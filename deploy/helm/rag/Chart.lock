@@ -5,9 +5,6 @@ dependencies:
 - name: minio
   repository: https://rh-ai-kickstart.github.io/ai-architecture-charts
   version: 0.1.0
-- name: mcp-weather
-  repository: https://rh-ai-kickstart.github.io/ai-architecture-charts
-  version: 0.1.0
 - name: llm-service
   repository: https://rh-ai-kickstart.github.io/ai-architecture-charts
   version: 0.1.0
@@ -16,9 +13,12 @@ dependencies:
   version: 0.1.0
 - name: ingestion-pipeline
   repository: https://rh-ai-kickstart.github.io/ai-architecture-charts
-  version: 0.2.9
+  version: 0.2.14
 - name: llama-stack
   repository: https://rh-ai-kickstart.github.io/ai-architecture-charts
-  version: 0.2.9
-digest: sha256:a22e198db736c7d39913517c3f9c3371b9b3d11c8d0c5fbfabe541355de6c2a2
-generated: "2025-06-06T12:13:54.297072725-04:00"
+  version: 0.2.14
+- name: mcp-servers
+  repository: https://rh-ai-kickstart.github.io/ai-architecture-charts
+  version: 0.1.0
+digest: sha256:c07b4636f09ed2a7eea6015a16121458807a56eaf778252d975ac174b30e1062
+generated: "2025-07-16T14:21:03.83351685-04:00"
